@@ -2,19 +2,28 @@
 <html>
   <head>
     <title>Dark Mode Toggle</title>
-
     <link rel="stylesheet" href="popup.css" />
+    <script src="https://unpkg.com/@lucide/lab@latest/dist/lucide-lab.min.js"></script>
   </head>
 
   <body>
+  <!-- The background video -->
+  <video autoplay loop muted playsinline preload="auto" id="video-background">
+    <source class="video1" src="video/v1.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <!-- Dark/tinted overlay for text readability -->
+  <div class="video-overlay">
+  </div>
     <div class="container">
-      <h2>Dark Mode</h2>
-
+      <img id="img1" src="icons/day-mode.png" alt="logo">
+      <h2 id="heading">Dark Mode</h2>
       <p>Toggle dark mode on any website.</p>
-
       <button id="toggleBtn">Enable Dark Mode</button>
     </div>
-
+    <footer>
+        Version 1.0 Running smoothly
+    </footer>
     <script src="popup.js"></script>
   </body>
 </html>

@@ -5,15 +5,27 @@ body {
   font-family: Arial, sans-serif;
   background: rgb(40, 40, 40);
   border: 1px solid white;
+  position: relative;
 }
 
 .container {
+  position: relative;
+  z-index: 100;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+img {
+  width: 25%;
 }
 
 h2 {
   margin-bottom: 10px;
   color: white;
+  font-size: 1.7rem;
 }
 
 p {
@@ -22,14 +34,58 @@ p {
   color: white;
 }
 
-button {
-  margin-top: 15px;
-  width: 100%;
-  padding: 10px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  background: black;
-  color: white;
+#toggleBtn {
+  margin-top: 5px;
+  padding: 14px 32px;
   font-size: 15px;
+  font-weight: 500;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  cursor: pointer;
+  
+  /* The core glassmorphic property */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); 
+  
+  transition: background 0.3s, border-color 0.3s;
+}
+
+#toggleBtn:hover {
+ background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+#toggleBtn:active {
+  transform: scale(0.97);
+}
+
+footer {
+  margin-top: 16px;
+  text-align: center;
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+
+#video-background {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Keeps aspect ratio intact */
+  transform: translate(-50%, -50%);
+}
+
+/* Dark tint overlay ensures text contrast */
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* Adjust opacity here */
+  z-index: 2;
 }
